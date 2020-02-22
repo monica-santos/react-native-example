@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import './config/ReactotronConfig';
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -42,16 +43,19 @@ const styles = StyleSheet.create({
   },
 });
 
-const App = () => (
-  <>
-    <View style={styles.sectionContainer}>
-      <Text style={styles.sectionTitle}>Step One</Text>
-      <Text style={styles.sectionDescription}>
-        Edit <Text style={styles.highlight}>App.js</Text> to change this screen
-        and then come back to see your edits.
-      </Text>
-    </View>
-  </>
-);
+const App = () => {
+  console.tron.log('test reactotron');
+  return (
+    <>
+      <View style={styles.sectionContainer}>
+        <Text style={styles.sectionTitle}>Step One</Text>
+        <Text style={styles.sectionDescription}>
+          Edit <Text style={styles.highlight}>App.js</Text> to change this
+          screen and then come back to see your edits.....
+        </Text>
+      </View>
+    </>
+  );
+};
 
 export default App;
