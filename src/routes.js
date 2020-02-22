@@ -23,16 +23,8 @@ const RootStack = () => (
       gestureEnabled: false,
     }}
   >
-    <Stack.Screen
-      name="Main"
-      component={Main}
-      options={{ ...options, headerTitle: 'Main Page' }}
-    />
-    <Stack.Screen
-      name="User"
-      component={User}
-      options={{ ...options, headerTitle: 'Usuários' }}
-    />
+    <Stack.Screen name="Main" component={Main} options={{ ...options }} />
+    <Stack.Screen name="User" component={User} options={{ ...options }} />
   </Stack.Navigator>
 );
 
