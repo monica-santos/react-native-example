@@ -2,7 +2,19 @@ import React, { Component } from 'react';
 import { func, shape, string } from 'prop-types';
 
 import api from '../../services/api';
-import { Avatar, Bio, Container, Header, Name } from './styles';
+import {
+  Author,
+  Avatar,
+  Bio,
+  Container,
+  Header,
+  Info,
+  Name,
+  OwnerAvatar,
+  Stars,
+  Starred,
+  Title,
+} from './styles';
 
 export default class User extends Component {
   static navigationOptions = properties => {
@@ -62,6 +74,20 @@ export default class User extends Component {
           <Name>{user.name}</Name>
           <Bio>{user.bio}</Bio>
         </Header>
+
+        <Stars
+          data={stars}
+          keyExtractor={star => String(star.id)}
+          renderItem={({ item }) => (
+            <Starred>
+              <OwnerAvatar source={{ uri: item.owner.avatar_url }} />
+              <Info>
+                <Title>{item.name}</Title>
+                <Author>{item.owner.login}</Author>
+              </Info>
+            </Starred>
+          )}
+        />
       </Container>
     );
   }
